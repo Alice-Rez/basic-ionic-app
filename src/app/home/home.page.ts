@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { UserService } from '../user.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -10,7 +10,7 @@ export class HomePage {
   public password: string = '';
   public wrongCombination: boolean = false;
 
-  constructor() {}
+  public constructor(private userService: UserService) {}
 
   public login(): void {
     if (this.name.split('').reverse().join('') !== this.password) {
