@@ -1,17 +1,32 @@
 <ion-content [fullscreen]="true">
-  <div class="container">
+  <div class="container" [ngClass]="{warning:wrongCombination}">
     <ion-text>
       <h1>Please login:</h1>
     </ion-text>
+
     <ion-item>
       <ion-label position="stacked">Name</ion-label>
-      <ion-input [(ngModel)]="name" type="text"></ion-input>
+      <ion-input
+        [(ngModel)]="name"
+        (keyup)="hideWarning()"
+        type="text"
+      ></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label position="stacked">Password</ion-label>
-      <ion-input [(ngModel)]="password" type="password"></ion-input>
+      <ion-input
+        [(ngModel)]="password"
+        (keyup)="hideWarning()"
+        type="password"
+      ></ion-input>
     </ion-item>
-    <ion-button [disabled]="!name || !password" expand="block" fill="outline"
+
+    <ion-button
+      [disabled]="!name || !password"
+      (click)="login()"
+      expand="block"
+      fill="outline"
       >Login</ion-button
     >
   </div>

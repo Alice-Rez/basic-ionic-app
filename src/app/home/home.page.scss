@@ -12,13 +12,12 @@ ion-item {
   border-color: transparent;
   --padding-start: 0;
   --inner-padding-end: 0;
+  --background: transparent;
 }
 
 ion-input {
   margin-top: 1em;
   border: solid 1px black;
-  // margin-right: 0;
-  // --padding-start: 8px;
 }
 
 .sc-ion-input-md-h,
@@ -29,4 +28,8 @@ ion-input {
 ion-button {
   margin-top: 6em;
   --border-radius: 45%;
+}
+
+.warning {
+  background-color: lightcoral;
 }
