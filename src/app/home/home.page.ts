@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -10,11 +12,17 @@ export class HomePage {
   public password: string = '';
   public wrongCombination: boolean = false;
 
-  public constructor(private userService: UserService) {}
+  public constructor(
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   public login(): void {
     if (this.name.split('').reverse().join('') !== this.password) {
       this.wrongCombination = true;
+    } else {
+      this.userService.name = this.name;
+      this.router.navigate(['/dashboard']);
     }
   }
 

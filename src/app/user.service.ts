@@ -4,15 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UserService {
-  private userName: string = '';
+  private _name: string | null = null;
 
-  public constructor() {}
-
-  public setName(name: string): void {
-    this.userName = name;
+  get name() {
+    return this._name;
   }
 
-  public getName(): string {
-    return this.userName;
+  set name(name: string) {
+    this._name = name;
   }
 }
