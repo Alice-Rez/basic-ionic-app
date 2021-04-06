@@ -5,12 +5,14 @@
     </ion-text>
     <ion-item>
       <ion-label position="stacked">Name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="name" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="stacked">Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
     </ion-item>
-    <ion-button expand="block" fill="outline">Login</ion-button>
+    <ion-button [disabled]="!name || !password" expand="block" fill="outline"
+      >Login</ion-button
+    >
   </div>
 </ion-content>
