@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -7,11 +8,14 @@ import { UserService } from '../user.service';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  public user: any = '';
+  public userName: string = '';
 
-  public constructor(private userService: UserService) {}
+  public constructor(
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) {}
 
   public ngOnInit(): void {
-    this.user = this.userService;
+    this.userName = this.route.snapshot.paramMap.get('name').split(':')[1];
   }
 }

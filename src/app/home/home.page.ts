@@ -22,7 +22,7 @@ export class HomePage {
       this.wrongCombination = true;
     } else {
       this.userService.name = this.name;
-      this.router.navigate(['/dashboard']);
+      this.router.navigate([`/dashboard/:${this.name}`]);
     }
   }
 
