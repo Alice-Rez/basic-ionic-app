@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from '../../shared/services/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { User } from 'src/app/shared/models/user.model';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  public name: string = '';
+  public user: User | null = null;
   public password: string = '';
   public wrongCombination: boolean = false;
 
@@ -19,13 +20,16 @@ export class HomePage {
     private authService: AuthService
   ) {}
 
+  public ngOnInit(): void {
+    this.user = this.userService.getUser();
+  }
+
   public login(): void {
-    if (this.name.split('').reverse().join('') !== this.password) {
+    if (this.user.name.split('').reverse().join('') !== this.password) {
       this.wrongCombination = true;
     } else {
-      this.userService.name = this.name;
       this.authService.login();
-      this.router.navigate([`/dashboard/:${this.name}`]);
+      this.router.navigate([`/dashboard`]);
     }
   }
 

@@ -10,6 +10,5 @@ import { UserService } from '../shared/services/user.service';
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule],
   declarations: [HomePage],
-  providers: [UserService],
 })
 export class HomePageModule {}

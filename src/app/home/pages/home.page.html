@@ -7,7 +7,7 @@
     <ion-item>
       <ion-label position="stacked">Name</ion-label>
       <ion-input
-        [(ngModel)]="name"
+        [(ngModel)]="user.name"
         (keyup)="hideWarning()"
         type="text"
       ></ion-input>
@@ -23,7 +23,7 @@
     </ion-item>
 
     <ion-button
-      [disabled]="!name || !password"
+      [disabled]="!user.name || !password"
       (click)="login()"
       expand="block"
       fill="outline"
