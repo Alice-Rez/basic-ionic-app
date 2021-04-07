@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { UserService } from '../../shared/services/user.service';
 
@@ -12,11 +13,17 @@ export class DashboardPage implements OnInit {
 
   public constructor(
     private userService: UserService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   public ngOnInit(): void {
     console.log(this.authService.isAuthenticated());
     this.userName = this.userService.getUser().name;
+  }
+
+  public logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/home']);
   }
 }

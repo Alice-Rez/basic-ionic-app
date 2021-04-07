@@ -4,3 +4,15 @@
   display: grid;
   place-content: center;
 }
+ion-footer {
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.flex-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

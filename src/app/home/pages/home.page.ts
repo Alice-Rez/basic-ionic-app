@@ -29,6 +29,7 @@ export class HomePage {
       this.wrongCombination = true;
     } else {
       this.authService.login();
+      this.password = '';
       this.router.navigate([`/dashboard`]);
     }
   }
