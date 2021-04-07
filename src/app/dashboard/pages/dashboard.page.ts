@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { UserService } from '../../shared/services/user.service';
 
 @Component({
@@ -12,10 +13,12 @@ export class DashboardPage implements OnInit {
 
   public constructor(
     private userService: UserService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService
   ) {}
 
   public ngOnInit(): void {
     this.userName = this.route.snapshot.paramMap.get('name').split(':')[1];
+    console.log(this.authService.isAuthenticated());
   }
 }
