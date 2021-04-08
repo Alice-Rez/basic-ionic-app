@@ -398,7 +398,19 @@ export class SearchPage implements OnInit {
 
   public citiesFiltered = this.cities;
 
+  public searchTerm = '';
+
   public constructor() {}
 
   public ngOnInit() {}
+
+  public filterCities(): void {
+    this.citiesFiltered = this.cities.filter((city) =>
+      city.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+
+  public clarFilter(): void {
+    this.citiesFiltered = this.cities;
+  }
 }

@@ -5,7 +5,11 @@
     >
     <ion-title>Search</ion-title>
   </ion-toolbar>
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar
+    [(ngModel)]="searchTerm"
+    (ionChange)="filterCities()"
+    (ionClear)="clarFilter()"
+  ></ion-searchbar>
 </ion-header>
 
 <ion-content>
