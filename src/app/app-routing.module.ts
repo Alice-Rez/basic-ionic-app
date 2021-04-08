@@ -18,6 +18,10 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'home',
   },
+  {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+  },
 ];
 
 @NgModule({
