@@ -23,3 +23,5 @@ Cities for list in search page are dynamically displayed from array. In future i
 Native projects for ios and Android were created but not deployed.
 
 **Used technologies:** Angular, Typescript, Ionic, SASS, HTML
+
+<img align="center" src="./preview.png" width="100%">
