@@ -15,12 +15,14 @@ const routes: Routes = [
       import('./dashboard/dashboard.module').then((m) => m.DashboardPageModule),
   },
   {
-    path: '**',
-    redirectTo: 'home',
+    path: 'search',
+    canActivate: [AuthGuardService],
+    loadChildren: () =>
+      import('./search/search.module').then((m) => m.SearchPageModule),
   },
   {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+    path: '**',
+    redirectTo: 'home',
   },
 ];
 

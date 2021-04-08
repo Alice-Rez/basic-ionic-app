@@ -1,9 +1,17 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>search</ion-title>
+    <a [routerLink]="['/dashboard']"
+      ><ion-icon name="chevron-back-outline"></ion-icon> <span>Back</span></a
+    >
+    <ion-title>Search</ion-title>
   </ion-toolbar>
+  <ion-searchbar></ion-searchbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor="let city of citiesFiltered">
+      <ion-label>{{city}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
