@@ -25,8 +25,14 @@ ion-footer {
   text-align: center;
 }
 
-.flex-container {
+ion-grid {
   width: 100%;
-  display: flex;
+}
+
+ion-row {
   justify-content: space-between;
+}
+
+ion-button {
+  width: 80%;
 }

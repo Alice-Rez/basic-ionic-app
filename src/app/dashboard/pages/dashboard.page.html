@@ -32,12 +32,26 @@
 </ion-content>
 
 <ion-footer class="ion-no-border">
-  <ion-toolbar class="flex-container">
-    <ion-button color="danger" fill="outline" (click)="logout()"
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-left">
+          <ion-button color="danger" fill="outline" (click)="logout()"
+            >Logout</ion-button
+          >
+        </ion-col>
+        <ion-col class="ion-text-right">
+          <ion-button color="primary" fill="outline" [routerLink]="['/search']"
+            >Search</ion-button
+          >
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!-- <ion-button color="danger" fill="outline" (click)="logout()"
       >Logout</ion-button
     >
     <ion-button color="primary" fill="outline" [routerLink]="['/search']"
       >Search</ion-button
-    >
+    > -->
   </ion-toolbar>
 </ion-footer>

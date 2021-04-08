@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.page.html',
   styleUrls: ['./search.page.scss'],
 })
-export class SearchPage implements OnInit {
+export class SearchPage {
   // just array of us cities to get dynamic list
 
   public cities = [
@@ -399,10 +399,6 @@ export class SearchPage implements OnInit {
   public citiesFiltered = this.cities;
 
   public searchTerm = '';
-
-  public constructor() {}
-
-  public ngOnInit() {}
 
   public filterCities(): void {
     this.citiesFiltered = this.cities.filter((city) =>
