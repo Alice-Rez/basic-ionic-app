@@ -4,21 +4,21 @@ Basic app created using Angular, Typescript and Ionic (UI Components + capacitor
 
 App has login page, basic user dashboard and search page to search through cities.
 
-For successful login, user has to insert name and password (which corresponds now to reversed name). Button for login is active just when there is something inserted in both inputs (name and password). If the combination of password and name is wrong, the screen has red background.
+For successful login, user has to enter name and password (which corresponds now to reversed name). The login button is active only when both name and password are entered. If the combination of password and name is wrong, the screen background turns red.
 
-On the Dashboard page, users name is displayed, in future there can be also photo. In the footer of this page is fixed toolbar with navigation (logout and go to search), that stays on the place although the whole page is scrolled.
+On the Dashboard page, user's name is displayed, a photo can be added in future. The footer of this page contains fixed toolbar with navigation (logout and go to search), which stays in place independent on page scrolling.
 
-On the search page, the list of the US cities is displayed. After typing to the searchbar, the cities are filtered accordingly to the search term (the cities that are displayed contains searched term). After clearing searchbar, all of the cities are once again displayed.
+On the search page, the list of the US cities is displayed. When typing in the searchbar, the cities are filtered according to the search term (i.e. only the cities containing the search term are displayed). After clearing searchbar, all cities are displayed again.
 
 ## Implementation details
 
 Angular services (user and auth) are used for sharing data between individual pages.
 
-User object, that is stored in the user service, has its own model, that defines its structure. Therefore it can be in future easily changed (another properties can be add) without necessity to go through the whole code (only places needed to be changed are user model and user service).
+User object, that is stored in the user service, has its own model defining its structure. Therefore, it can be easily changed (another properties can be added) in future without the necessity to go through the whole code (since the only places requiring changes are the user model and user service).
 
-Routes for dashboard and search pages are protected using Authentication guard - without successful login, user can not reach them.
+Routes for dashboard and search pages are protected using Authentication guard - a user can not reach them without successful login.
 
-Cities for list in search page are dynamically displayed from array. In future it is possible to easily add request to some API to get for example cities in users current state.......
+Cities for the list in search page are dynamically displayed from an array. In future, it would be possible to easily add a request to some API to get for example cities in user's current state...
 
 Native projects for ios and Android were created but not deployed.
 
