@@ -406,7 +406,7 @@ export class SearchPage {
     );
   }
 
-  public clarFilter(): void {
+  public clearFilter(): void {
     this.citiesFiltered = this.cities;
   }
 }

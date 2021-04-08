@@ -18,7 +18,6 @@ export class DashboardPage implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    console.log(this.authService.isAuthenticated());
     this.userName = this.userService.getUser().name;
   }
 
